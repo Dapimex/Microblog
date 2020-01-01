@@ -1,0 +1,20 @@
+{% extends 'common.html' %}
+
+{% block content %}
+
+    {% for val in values %}
+
+        <div class="post">
+            <p class="post-text">val.text</p>
+        </div>
+
+    {% endfor %}
+
+    <form name="new-post" method="post">
+        <p>Напишите пост<br>
+            <textarea name="post-field" cols="80" rows="5"></textarea>
+        </p>
+
+        <p><input type="submit" value="Отправить"></p>
+    </form>
+{% endblock %}
