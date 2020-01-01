@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from AnonMicroBlog.models import PostModel
 
-posts = []
+posts = PostModel.objects.all()
 
 
 def index(request):
-    return render(request, 'home.html', {'values': posts})
+    if request.method == "GET":
+        return render(request, 'home.html', {'values': posts})
+    elif request.method == "POST":
+        return render(request, 'home.html', {'values': posts})
+
+

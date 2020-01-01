@@ -5,12 +5,14 @@
     {% for val in values %}
 
         <div class="post">
-            <p class="post-text">val.text</p>
+            <p class="post-text">{{ val.post }}</p>
         </div>
 
     {% endfor %}
 
     <form name="new-post" method="post">
+        {% csrf_token %}
+
         <p>Напишите пост<br>
             <textarea name="post-field" cols="80" rows="5"></textarea>
         </p>

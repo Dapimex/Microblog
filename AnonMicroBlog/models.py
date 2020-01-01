@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
+class PostModel(models.Model):
+    post = models.TextField()
+
+    def _clean(self):
+        self.clean()
+
+
