@@ -1,13 +1,24 @@
 from django.shortcuts import render
-from AnonMicroBlog.models import PostModel
-
-posts = PostModel.objects.all()
+from .models import PostModel
+from .forms import PostForm
 
 
 def index(request):
     if request.method == "GET":
-        return render(request, 'home.html', {'values': posts})
+        form = PostForm
+        posts = PostModel.objects.all()
+        return render(request, 'home.html', {'values': posts, 'form': form, 'clear': clear_posts})
     elif request.method == "POST":
-        return render(request, 'home.html', {'values': posts})
+        form = PostForm(request.POST)
+        form.fields["post"] = "Напишите пост"
+        post = form.save(commit=False)
+        post.save()
+        posts = PostModel.objects.all()
+        form = PostForm
+        return render(request, 'home.html', {'values': posts, 'form': form})
 
+
+def clear_posts():
+    PostModel.objects.all().delete()
+    return
 

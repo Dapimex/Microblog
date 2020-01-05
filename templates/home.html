@@ -12,11 +12,9 @@
 
     <form name="new-post" method="post">
         {% csrf_token %}
-
-        <p>Напишите пост<br>
-            <textarea name="post-field" cols="80" rows="5"></textarea>
-        </p>
-
+        <h3>Напишите пост:</h3>
+        {{ form.post }}
         <p><input type="submit" value="Отправить"></p>
     </form>
+{#    <input type="button" onclick="{{ clear }}">#}
 {% endblock %}
