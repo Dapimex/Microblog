@@ -1,0 +1,53 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: red;
+    font-size: 16px;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+}
+
+.post {
+    background-color: aliceblue;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.post-text {
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+
+.post-input {
+    border-width: 1px;
+    border-color: lightgray;
+    background-color: whitesmoke;
+    color: dimgrey;
+    padding: 7px
+}
+
+.post-button {
+    background-color: yellowgreen;
+    border-width: 0;
+    border-radius: 3px;
+    padding: 7px;
+    transition: 0.5s;
+    font-size: 15px;
+    color: white;
+}
+
+.post-button:hover {
+    background-color: whitesmoke;
+    border-width: 1px;
+    color: black;
+    transition: 0.5s;
+}
+
+.post-input-label {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
